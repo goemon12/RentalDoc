@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D80CA692621F52F00FB6332 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CA682621F52F00FB6332 /* ListView.swift */; };
+		0DCA48EA262B0A5A009E10B0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA48E9262B0A59009E10B0 /* DetailView.swift */; };
 		0DEF207C2621D821004095DB /* RentalDocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF207B2621D821004095DB /* RentalDocApp.swift */; };
 		0DEF207E2621D821004095DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF207D2621D821004095DB /* ContentView.swift */; };
 		0DEF20802621D826004095DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF207F2621D826004095DB /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D80CA682621F52F00FB6332 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		0DCA48E9262B0A59009E10B0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0DEF20782621D821004095DB /* RentalDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RentalDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEF207B2621D821004095DB /* RentalDocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalDocApp.swift; sourceTree = "<group>"; };
 		0DEF207D2621D821004095DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				0DEF207B2621D821004095DB /* RentalDocApp.swift */,
 				0DEF207D2621D821004095DB /* ContentView.swift */,
+				0D80CA682621F52F00FB6332 /* ListView.swift */,
+				0DCA48E9262B0A59009E10B0 /* DetailView.swift */,
 				0DEF207F2621D826004095DB /* Assets.xcassets */,
 				0DEF20842621D826004095DB /* Info.plist */,
 				0DEF20812621D826004095DB /* Preview Content */,
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DEF207E2621D821004095DB /* ContentView.swift in Sources */,
+				0DCA48EA262B0A5A009E10B0 /* DetailView.swift in Sources */,
 				0DEF207C2621D821004095DB /* RentalDocApp.swift in Sources */,
+				0D80CA692621F52F00FB6332 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

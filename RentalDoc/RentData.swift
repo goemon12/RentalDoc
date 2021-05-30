@@ -25,3 +25,5 @@ class AllData: ObservableObject {
         RentData(title: "A", stat: 0, date: Date(), photo: Image(systemName: "person"))
     ]
 }
+
+var imgCap: UIImage?

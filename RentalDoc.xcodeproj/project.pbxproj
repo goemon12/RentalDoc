@@ -17,6 +17,8 @@
 		0DEF207E2621D821004095DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF207D2621D821004095DB /* ContentView.swift */; };
 		0DEF20802621D826004095DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF207F2621D826004095DB /* Assets.xcassets */; };
 		0DEF20832621D826004095DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF20822621D826004095DB /* Preview Assets.xcassets */; };
+		0DF5274B2661B66A008DD4E0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5274A2661B66A008DD4E0 /* EditView.swift */; };
+		0DF527512661BBB9008DD4E0 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF527502661BBB8008DD4E0 /* ActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		0DEF207F2621D826004095DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DEF20822621D826004095DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0DEF20842621D826004095DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DF5274A2661B66A008DD4E0 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		0DF527502661BBB8008DD4E0 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +68,16 @@
 		0DEF207A2621D821004095DB /* RentalDoc */ = {
 			isa = PBXGroup;
 			children = (
-				0DEF207B2621D821004095DB /* RentalDocApp.swift */,
 				0D76EA9126612E9600872F99 /* RentData.swift */,
+				0DEF207B2621D821004095DB /* RentalDocApp.swift */,
 				0DEF207D2621D821004095DB /* ContentView.swift */,
 				0D71265026618DB3002EFFDE /* ListView.swift */,
 				0D71265C2661927C002EFFDE /* NewView.swift */,
+				0DF5274A2661B66A008DD4E0 /* EditView.swift */,
 				0D712653266191CB002EFFDE /* RentView.swift */,
 				0D71265926619214002EFFDE /* Coordinator.swift */,
 				0D71265626619200002EFFDE /* ImagePicker.swift */,
+				0DF527502661BBB8008DD4E0 /* ActivityView.swift */,
 				0DEF207F2621D826004095DB /* Assets.xcassets */,
 				0DEF20842621D826004095DB /* Info.plist */,
 				0DEF20812621D826004095DB /* Preview Content */,
@@ -159,8 +165,10 @@
 				0D71265126618DB3002EFFDE /* ListView.swift in Sources */,
 				0DEF207E2621D821004095DB /* ContentView.swift in Sources */,
 				0D76EA9226612E9600872F99 /* RentData.swift in Sources */,
+				0DF527512661BBB9008DD4E0 /* ActivityView.swift in Sources */,
 				0D71265726619200002EFFDE /* ImagePicker.swift in Sources */,
 				0DEF207C2621D821004095DB /* RentalDocApp.swift in Sources */,
+				0DF5274B2661B66A008DD4E0 /* EditView.swift in Sources */,
 				0D71265D2661927C002EFFDE /* NewView.swift in Sources */,
 				0D712654266191CB002EFFDE /* RentView.swift in Sources */,
 				0D71265A26619214002EFFDE /* Coordinator.swift in Sources */,

@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct NewView: View {
+struct EditView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var allData: AllData
+    @ObservedObject var rentData: RentData
     
     @State var title: String = ""
     @State var stat: Int = 0
@@ -12,6 +12,12 @@ struct NewView: View {
     var body: some View {
         RentView(title: $title, stat: $stat, date: $date, photo: $photo)
             .padding(.all, 10)
+            .onAppear {
+                title = rentData.title
+                stat = rentData.stat
+                date = rentData.date
+                photo = rentData.photo
+            }
             
             .navigationBarTitle("変更", displayMode: .inline)
             .navigationBarBackButtonHidden(true)
@@ -21,7 +27,10 @@ struct NewView: View {
                 Image(systemName: "arrow.backward")
                 Text("戻る")
             }, trailing: Button(action: {
-                allData.rentData.append(RentData(title: title, stat: stat, date: date, photo: photo))
+                rentData.title = title
+                rentData.stat = stat
+                rentData.date = date
+                rentData.photo = photo                
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image(systemName: "folder.badge.plus")
@@ -30,8 +39,8 @@ struct NewView: View {
     }
 }
 
-struct NewView_Previews: PreviewProvider {
+struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        NewView(allData: AllData())
+        EditView(rentData: RentData(title: "A", stat: 0, date: Date(), photo: Image(systemName: "photo")))
     }
 }

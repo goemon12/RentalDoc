@@ -7,7 +7,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(allData.rentData) {data in
-                    NavigationLink(destination: Text("AAA")) {
+                    NavigationLink(destination: EditView(rentData: data)) {
                         ListView(rentData: data)
                     }
                 }

@@ -15,6 +15,8 @@ struct RentView: View {
     
     @State var flgPhoto = false
     @State var srcPhoto = UIImagePickerController.SourceType.photoLibrary
+    @State var flgActivity = false
+    @State var rect = CGRect.zero
     
     var dateF: DateFormatter {
         let f = DateFormatter()
@@ -49,6 +51,9 @@ struct RentView: View {
                             .scaledToFit()
                             .frame(height: 100)
                     }
+                    .onAppear {
+                        rect = geometry1.frame(in: .local)
+                    }
                 }
                 HStack(alignment: .bottom, spacing: 20.0) {
                     Button(action: {
@@ -76,6 +81,9 @@ struct RentView: View {
                         }
                     }
                     Button(action: {
+                        let tmp = capture(rect: geometry2.frame(in: .global))
+                        imgCap = cropImage(with: tmp, rect: rect)
+                        flgActivity = true
                     }) {
                         VStack {
                             Image(systemName: "square.and.arrow.up")
@@ -91,8 +99,44 @@ struct RentView: View {
                     .sheet(isPresented: $flgPhoto) {
                         ImagePicker(image: $photo, date: $date, isPick: $flgPhoto, source: srcPhoto)
                     }
+                
+                Spacer()
+                    .sheet(isPresented: $flgActivity) {
+                        ActivityView(activityItems: [imgCap!], applicationActivities: nil)
+                        
+                    }
             }
         }
+    }
+}
+
+extension UIView {
+    var renderedImage: UIImage {
+        let rect = self.bounds
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        self.layer.render(in: context)
+        let capturedImgae: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return capturedImgae
+    }
+}
+
+extension RentView {
+    func capture(rect: CGRect) -> UIImage {
+        let window = UIWindow(frame: CGRect(origin: rect.origin, size: rect.size))
+        let hosting = UIHostingController(rootView: self.body)
+        hosting.view.frame = window.frame
+        window.addSubview(hosting.view)
+        window.makeKeyAndVisible()
+        return hosting.view.renderedImage
+    }
+    
+    private func cropImage(with image: UIImage, rect: CGRect) -> UIImage? {
+        let ajustRect = CGRect(x: rect.origin.x * image.scale, y: rect.origin.y * image.scale, width: rect.width * image.scale, height: rect.height * image.scale)
+        guard let img = image.cgImage?.cropping(to: ajustRect) else { return nil }
+        let croppedImage = UIImage(cgImage: img, scale: image.scale, orientation: image.imageOrientation)
+        return croppedImage
     }
 }
 

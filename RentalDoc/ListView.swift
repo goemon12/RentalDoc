@@ -19,8 +19,8 @@ struct ListView: View {
             rentData.photo
                 .resizable()
                 .scaledToFit()
-                .frame(height: 80)
         }
+        .frame(height: 100)
     }
 }
 

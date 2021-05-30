@@ -49,7 +49,7 @@ struct RentView: View {
                         photo
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 100)
+                            .frame(height: 150)
                     }
                     .onAppear {
                         rect = geometry1.frame(in: .local)
@@ -97,7 +97,7 @@ struct RentView: View {
                 
                 Spacer()
                     .sheet(isPresented: $flgPhoto) {
-                        ImagePicker(image: $photo, date: $date, isPick: $flgPhoto, source: srcPhoto)
+                        ImagePicker(image: $photo, date: $date, isPick: $flgPhoto, source: $srcPhoto)
                     }
                 
                 Spacer()

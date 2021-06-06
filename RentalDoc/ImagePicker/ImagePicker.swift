@@ -1,11 +1,19 @@
+//
+//  ImagePicker.swift
+//  CameraApp
+//
+//  Created by 高橋京介 on 2020/06/07.
+//  Copyright © 2020 高橋京介. All rights reserved.
+//
+
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
+    
     @Binding var image: Image
     @Binding var date: Date
-    @Binding var isPick: Bool
-    
-    @Binding var source: UIImagePickerController.SourceType
+    @Binding var isPicking: Bool
+    @Binding var soruce: UIImagePickerController.SourceType
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -13,13 +21,12 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
-
-        picker.sourceType = source        
+        picker.sourceType = soruce
         picker.delegate = context.coordinator
         return picker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+    func updateUIViewController(_ uiViewController: UIImagePickerController,
+                                context: Context) {
     }
 }
-

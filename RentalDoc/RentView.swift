@@ -16,7 +16,9 @@ struct RentView: View {
     @State var flgPhoto = false
     @State var srcPhoto = UIImagePickerController.SourceType.photoLibrary
     @State var flgActivity = false
-    @State var rect = CGRect.zero
+    
+    @State var r1: CGRect = .zero
+    @State var r2: CGRect = .zero
     
     var dateF: DateFormatter {
         let f = DateFormatter()
@@ -27,9 +29,9 @@ struct RentView: View {
     }
     
     var body: some View {
-        GeometryReader {geometry2 in
+        GeometryReader {geo1 in
             VStack {
-                GeometryReader {geometry1 in
+                GeometryReader {geo2 in
                     VStack {
                         Text("品名").font(.title)
                         TextField("", text: $title)
@@ -52,7 +54,7 @@ struct RentView: View {
                             .frame(height: 150)
                     }
                     .onAppear {
-                        rect = geometry1.frame(in: .local)
+                        r2 = geo2.frame(in: .local)
                     }
                 }
                 HStack(alignment: .bottom, spacing: 20.0) {
@@ -81,10 +83,8 @@ struct RentView: View {
                         }
                     }
                     Button(action: {
-                        print("")
-                        
-                        let tmp = capture(rect: geometry2.frame(in: .global))
-                        imgCap = cropImage(with: tmp, rect: rect)
+                        let tmp = capture(rect: r1)
+                        imgCap = cropImage(with: tmp, rect: r2)
                         flgActivity = true
                     }) {
                         VStack {
@@ -107,6 +107,9 @@ struct RentView: View {
                         ActivityView(activityItems: [imgCap!], applicationActivities: nil)
                         
                     }
+            }
+            .onAppear {
+                r1 = geo1.frame(in: .global)
             }
         }
     }
